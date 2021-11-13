@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -16,7 +17,12 @@ public class UserManagementService {
     private final FirebaseAuth firebaseAuth;
 
     public void setUserClaims(String uid, List<Permission> requestedPermissions) throws FirebaseAuthException {
-        Map<String, Object> claims = Map.of("custom_claims", requestedPermissions);
+        List<String> permissions = requestedPermissions
+                .stream()
+                .map(Enum::toString)
+                .collect(Collectors.toList());
+
+        Map<String, Object> claims = Map.of("custom_claims", permissions);
 
         firebaseAuth.setCustomUserClaims(uid, claims);
     }
