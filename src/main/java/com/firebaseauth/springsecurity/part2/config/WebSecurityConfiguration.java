@@ -1,4 +1,4 @@
-package com.firebaseauth.springsecurity.part1.config;
+package com.firebaseauth.springsecurity.part2.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
