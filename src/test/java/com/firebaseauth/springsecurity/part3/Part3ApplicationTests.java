@@ -1,10 +1,10 @@
-package com.firebaseauth.springsecurity.part2;
+package com.firebaseauth.springsecurity.part3;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Part2ApplicationTests {
+class Part3ApplicationTests {
 
 	@Test
 	void contextLoads() {

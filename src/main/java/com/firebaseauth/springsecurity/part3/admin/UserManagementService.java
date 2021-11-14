@@ -1,6 +1,6 @@
-package com.firebaseauth.springsecurity.part2.admin;
+package com.firebaseauth.springsecurity.part3.admin;
 
-import com.firebaseauth.springsecurity.part2.security.Permission;
+import com.firebaseauth.springsecurity.part3.security.Permission;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import lombok.RequiredArgsConstructor;

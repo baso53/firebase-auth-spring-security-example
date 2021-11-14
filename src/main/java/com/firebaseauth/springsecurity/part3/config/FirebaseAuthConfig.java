@@ -1,4 +1,4 @@
-package com.firebaseauth.springsecurity.part2.config;
+package com.firebaseauth.springsecurity.part3.config;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
