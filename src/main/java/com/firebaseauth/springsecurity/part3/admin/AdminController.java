@@ -1,12 +1,14 @@
 package com.firebaseauth.springsecurity.part3.admin;
 
+import com.firebaseauth.springsecurity.part3.security.EntityType;
 import com.firebaseauth.springsecurity.part3.security.Permission;
 import com.google.firebase.auth.FirebaseAuthException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/admin")
@@ -19,9 +21,8 @@ public class AdminController {
     @PostMapping(path = "/user-claims/{uid}")
     public void setUserClaims(
             @PathVariable String uid,
-            @RequestBody List<Permission> requestedClaims
+            @RequestBody Map<EntityType, Map<Long, Set<Permission>>> requestedClaims
     ) throws FirebaseAuthException {
-        userManagementService.setUserClaims(uid, requestedClaims);
+        userManagementService.setTokenClaims(uid, requestedClaims);
     }
-
 }
